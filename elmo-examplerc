@@ -1,0 +1,11 @@
+set name  #realname
+set email #adres pocztowy
+set editor #ulubiony edytor
+set maildir #/dok³adna/¶cie¿ka/do/Maildira
+set maildir_incoming #/dok³adna/¶cie¿ka/poczty/przychodz±cej
+set smtp_host #adres serwera smtp
+set pop_host #adres serwera pop3
+set pop_user # user
+set pop_pass #pass
+set sigfile #sygnaturka
+
