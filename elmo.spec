@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2+
 Group:		Applications/Mail
 Source0:	http://savannah.nongnu.org/download/elmo/unstable.pkg/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	6cbb1906b49c29b34d0e906803c369b7
 Source1:	%{name}-examplerc
 Patch0:		%{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
