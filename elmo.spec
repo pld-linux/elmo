@@ -5,7 +5,7 @@ Summary:	Elmo, MUA supporting Maildirs and Polish language
 Summary(pl):	Elmo - program pocztowy obs³uguj±cy Maildiry i jêzyk polski
 Name:		elmo
 Version:	1.3.2
-Release:	1
+Release:	2
 License:	GPL v2+
 Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
 Group:		Applications/Mail
@@ -63,4 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ADVOCACY AUTHORS doc/README.txt doc/sample.* TODO BUGS THANKS examplerc
 %attr(755,root,root) %{_bindir}/*
+%{_datadir}/%{name}/themes/80x25
+%{_datadir}/%{name}/themes/outlook
+%{_datadir}/%{name}/template
 %{_mandir}/man1/*
