@@ -1,8 +1,10 @@
+# Conditional build:
+%bcond_without	home_etc	# don't use home_etc
 Summary:	Elmo, MUA supporting Maildirs and Polish language
 Summary(pl):	Elmo - program pocztowy obs³uguj±cy Maildiry i jêzyk polski
 Name:		elmo
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
 Group:		Applications/Mail
@@ -10,12 +12,14 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	8c5109b462008625ed928abc0d907710
 Source1:	%{name}-examplerc
 Patch0:		%{name}-etc_dir.patch
+Patch10:	%{name}-home_etc.patch
 URL:		http://elmo.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
+%{?with_home_etc:BuildRequires:	home-etc-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,6 +30,7 @@ Elmo - ¶wietny i niedu¿y program pocztowy.
 
 %prep
 %setup -q
+%{?with_home_etc:%patch10 -p1}
 install -m 644 %{SOURCE1} ./examplerc
 
 %build
@@ -36,7 +41,8 @@ install -m 644 %{SOURCE1} ./examplerc
 %{__autoheader}
 %{__automake}
 %{__automake} m4/Makefile
-%configure
+%configure \
+	%{?with_home_etc:--with-home-etc}
 
 %{__make} \
 	CC="%{__cc} %{rpmcflags}"
