@@ -3,7 +3,7 @@ Summary(pl):	Elmo - program pocztowy obs³uguj±cy Maildiry i jêzyk polski
 Name:		elmo
 Version:	0.7.2
 Release:	1
-License:	distributable
+License:	GPL v2+
 Group:		Applications/Mail
 Source0:	http://savannah.nongnu.org/download/elmo/unstable.pkg/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}-examplerc
@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README TODO BUGS THANKS examplerc
+%doc ADVOCACY AUTHORS README TODO BUGS THANKS examplerc
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_infodir}/*.info*
