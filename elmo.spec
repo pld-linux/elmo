@@ -1,12 +1,12 @@
 Summary:	Elmo, MUA supporting Maildirs and Polish language
 Summary(pl):	Elmo - program pocztowy obs³uguj±cy Maildiry i jêzyk polski
 Name:		elmo
-Version:	0.7.2
+Version:	0.8
 Release:	1
 License:	GPL v2+
 Group:		Applications/Mail
 Source0:	http://savannah.nongnu.org/download/elmo/unstable.pkg/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	6cbb1906b49c29b34d0e906803c369b7
+# Source0-md5:	d5db2d0fe65c5def391bdb5aee579f90
 Source1:	%{name}-examplerc
 Patch0:		%{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
@@ -24,14 +24,15 @@ Elmo, excellent and light mua.
 Elmo - ¶wietny i niedu¿y program pocztowy.
 
 %prep
-%setup -q -n %{name}-0.7
-#%patch0 -p1
+%setup -q
 install -m 644 %{SOURCE1} ./examplerc
 
 %build
+%{__gettextize}
 %{__libtoolize}
-%{__aclocal} -I .
+%{__aclocal} 
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 
@@ -42,8 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT \
 	docdir=%{_datadir}/%{name}-%{version}
-
-install src/elmoconf.sh $RPM_BUILD_ROOT%{_bindir}
 
 %find_lang %{name}
 
