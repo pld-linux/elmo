@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ADVOCACY AUTHORS README TODO BUGS THANKS examplerc
+%doc ADVOCACY AUTHORS doc/README.txt doc/sample.* TODO BUGS THANKS examplerc
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_infodir}/*.info*
