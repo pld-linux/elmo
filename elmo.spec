@@ -4,19 +4,20 @@
 Summary:	Elmo, MUA supporting Maildirs and Polish language
 Summary(pl):	Elmo - program pocztowy obs³uguj±cy Maildiry i jêzyk polski
 Name:		elmo
-Version:	1.3.1
+Version:	1.3.2
 Release:	1
 License:	GPL v2+
 Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	551171feb937a7b58372682993653ba5
+# Source0-md5:	bc3836a276b092fde8555e42532d4bc8
 Source1:	%{name}-examplerc
 Patch0:		%{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	gpgme-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 %{?with_home_etc:BuildRequires:	home-etc-devel}
