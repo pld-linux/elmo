@@ -9,6 +9,7 @@ Source0:	http://savannah.nongnu.org/download/elmo/unstable.pkg/%{version}/%{name
 Source1:	%{name}-examplerc
 Patch0:		%{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
+Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
