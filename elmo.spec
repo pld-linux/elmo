@@ -32,7 +32,7 @@ Elmo - ¶wietny i niedu¿y program pocztowy.
 
 %prep
 %setup -q
-install -m 644 %{SOURCE1} ./examplerc
+install %{SOURCE1} ./examplerc
 
 %build
 %{__gettextize}
@@ -64,6 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ADVOCACY AUTHORS doc/README.txt doc/sample.* TODO BUGS THANKS examplerc
 %attr(755,root,root) %{_bindir}/*
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/themes
 %{_datadir}/%{name}/themes/80x25
 %{_datadir}/%{name}/themes/outlook
 %{_datadir}/%{name}/template
