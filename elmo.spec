@@ -4,15 +4,16 @@ Name:		elmo
 Version:	0.8
 Release:	1
 License:	GPL v2+
+Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
 Group:		Applications/Mail
 Source0:	http://savannah.nongnu.org/download/elmo/unstable.pkg/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	d5db2d0fe65c5def391bdb5aee579f90
 Source1:	%{name}-examplerc
 Patch0:		%{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
-Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,10 +37,12 @@ install -m 644 %{SOURCE1} ./examplerc
 %{__automake}
 %configure
 
-%{__make} CC="%{__cc} %{rpmcflags}"
+%{__make} \
+	CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT \
 	docdir=%{_datadir}/%{name}-%{version}
