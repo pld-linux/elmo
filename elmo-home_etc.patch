@@ -1,0 +1,48 @@
+diff -Nru elmo-0.4/src/abook.c elmo-0.4.new/src/abook.c
+--- elmo-0.4/src/abook.c	Thu Mar 13 20:51:32 2003
++++ elmo-0.4.new/src/abook.c	Sat Mar 29 07:34:33 2003
+@@ -194,8 +194,14 @@
+   FILE *fp;
+ 
+   afile = cf_txtvar_lookup ("addressbook");
+-  if (afile == NULL)
+-    afile = file_with_dir (getenv ("HOME"), ".addressbook");
++  if (afile == NULL) {
++    char *config_dir = getenv("CONFIG_DIR");
++    
++    if (config_dir)
++      afile = file_with_dir (config_dir, "addressbook");
++    else
++      afile = file_with_dir (getenv ("HOME"), ".addressbook");
++  }
+   else
+     afile = xstrdup (afile);
+   
+diff -Nru elmo-0.4/src/confread.c elmo-0.4.new/src/confread.c
+--- elmo-0.4/src/confread.c	Mon Mar 17 08:24:02 2003
++++ elmo-0.4.new/src/confread.c	Sat Mar 29 07:31:40 2003
+@@ -53,6 +53,7 @@
+ #define BUFFER_SIZE 128
+ 
+ #define CONF_FILE ".elmorc"
++#define CONFIG_DIR_CONF_FILE "elmorc"
+ 
+ enum type_t {TYPE_TXT, TYPE_NUM};
+ 
+@@ -272,8 +273,14 @@
+   conf_table  = htable_create (size);
+   initialized = 1;
+ 
+-  if (config_file == NULL)
+-    file = file_with_dir (getenv ("HOME"), CONF_FILE);
++  if (config_file == NULL){
++    char *config_dir = getenv("CONFIG_DIR");
++    
++    if (config_dir)
++      file = file_with_dir (config_dir, CONFIG_DIR_CONF_FILE);
++    else
++      file = file_with_dir (getenv ("HOME"), CONF_FILE);
++  }
+   else
+     file = xstrdup (config_file);
+   cf_read_file (file);
