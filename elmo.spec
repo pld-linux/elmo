@@ -41,6 +41,8 @@ rm -rf $RPM_BUILD_ROOT
         DESTDIR=$RPM_BUILD_ROOT \
 	docdir=%{_datadir}/%{name}-%{version}
 
+install src/elmoconf.sh $RPM_BUILD_ROOT%{_bindir}
+
 %find_lang %{name}
 
 %clean
