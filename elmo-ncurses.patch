@@ -1,0 +1,297 @@
+--- elmo-0.6/configure.in.orig	Tue Apr  8 14:32:36 2003
++++ elmo-0.6/configure.in	Tue Apr  8 14:33:00 2003
+@@ -15,7 +15,7 @@
+ 
+ 
+ dnl Checks for header files.
+-AC_CHECK_HEADERS(getopt.h wordexp.h glob.h ncurses.h curses.h)
++AC_CHECK_HEADERS(getopt.h wordexp.h glob.h ncurses/ncurses.h curses.h)
+ 
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
+--- elmo-0.6/src/choose.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/choose.c	Tue Apr  8 17:57:15 2003
+@@ -30,8 +30,8 @@
+ 
+ #include <string.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/clock.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/clock.c	Tue Apr  8 17:57:15 2003
+@@ -38,8 +38,8 @@
+ #include <time.h>
+ #include <signal.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/cmd.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/cmd.c	Tue Apr  8 17:57:15 2003
+@@ -32,8 +32,8 @@
+ 
+ #include <errno.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/cmd.h.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/cmd.h	Tue Apr  8 17:57:15 2003
+@@ -28,8 +28,8 @@
+ # include <config.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/compose.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/compose.c	Tue Apr  8 17:57:15 2003
+@@ -43,8 +43,8 @@
+ #include <time.h>
+ #include <errno.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/elmo.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/elmo.c	Tue Apr  8 17:57:15 2003
+@@ -34,8 +34,8 @@
+ #include <sys/types.h>
+ #include <signal.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/error.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/error.c	Tue Apr  8 17:57:15 2003
+@@ -43,8 +43,8 @@
+ #include <sys/types.h>
+ #include <signal.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/fetch.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/fetch.c	Tue Apr  8 17:57:15 2003
+@@ -38,8 +38,8 @@
+ #include <sys/types.h>
+ #include <sys/mman.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/folder.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/folder.c	Tue Apr  8 17:57:15 2003
+@@ -32,8 +32,8 @@
+ 
+ #include <string.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/linech.h.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/linech.h	Tue Apr  8 17:57:15 2003
+@@ -28,8 +28,8 @@
+ # include <config.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/mail.h.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/mail.h	Tue Apr  8 17:57:15 2003
+@@ -30,8 +30,8 @@
+ 
+ #include <time.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/mailinfo.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/mailinfo.c	Tue Apr  8 17:57:15 2003
+@@ -30,8 +30,8 @@
+ # include <config.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/mailreader.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/mailreader.c	Tue Apr  8 17:57:15 2003
+@@ -34,8 +34,8 @@
+ #include <unistd.h>
+ #include <errno.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/progress.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/progress.c	Tue Apr  8 17:57:15 2003
+@@ -33,8 +33,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/rchtype.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/rchtype.c	Tue Apr  8 17:57:15 2003
+@@ -33,8 +33,8 @@
+ #include <string.h>
+ #include <ctype.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/rchtype.h.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/rchtype.h	Tue Apr  8 17:57:15 2003
+@@ -34,8 +34,8 @@
+ 
+ #include <stdlib.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/read.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/read.c	Tue Apr  8 17:57:15 2003
+@@ -35,8 +35,8 @@
+ # include <glob.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/screen.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/screen.c	Tue Apr  8 17:57:15 2003
+@@ -32,8 +32,8 @@
+ 
+ #include <pthread.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/screen.h.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/screen.h	Tue Apr  8 17:57:15 2003
+@@ -28,8 +28,8 @@
+ # include <config.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/select.c.orig	Tue Apr  8 17:57:15 2003
++++ elmo-0.6/src/select.c	Tue Apr  8 17:57:16 2003
+@@ -30,8 +30,8 @@
+ # include <config.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/select.h.orig	Tue Apr  8 17:57:16 2003
++++ elmo-0.6/src/select.h	Tue Apr  8 17:57:16 2003
+@@ -28,8 +28,8 @@
+ # include <config.h>
+ #endif
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
+--- elmo-0.6/src/status.c.orig	Tue Apr  8 17:57:16 2003
++++ elmo-0.6/src/status.c	Tue Apr  8 17:57:16 2003
+@@ -32,8 +32,8 @@
+ 
+ #include <string.h>
+ 
+-#ifdef HAVE_NCURSES_H
+-# include <ncurses.h>
++#ifdef HAVE_NCURSES_NCURSES_H
++# include <ncurses/ncurses.h>
+ #elif HAVE_CURSES_H
+ # include <curses.h>
+ #endif
