@@ -8,7 +8,7 @@ Group:		Applications/Mail
 Source0:	http://savannah.nongnu.org/download/elmo/unstable.pkg/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}-examplerc
 Patch0:		%{name}-makefile.diff
-Patch1:   %{name}-home_etc.patch
+Patch1:   %{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
