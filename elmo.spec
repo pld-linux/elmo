@@ -26,6 +26,7 @@ Elmo - ¶wietny i niedu¿y program pocztowy.
 %setup -q 
 %patch0 -p1
 #%patch1 -p1
+install -m 644 %{SOURCE1} ./examplerc
 
 %build
 %{__libtoolize}
@@ -47,6 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README TODO BUGS THANKS examplerc
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_infodir}/*.info*
