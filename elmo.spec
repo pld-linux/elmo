@@ -31,7 +31,7 @@ install -m 644 %{SOURCE1} ./examplerc
 %build
 %{__gettextize}
 %{__libtoolize}
-%{__aclocal} 
+%{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
