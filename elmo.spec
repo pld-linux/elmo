@@ -19,7 +19,7 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
+#BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 %{?with_home_etc:BuildRequires:	home-etc-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,12 +36,12 @@ install %{SOURCE1} ./examplerc
 
 %build
 %{__gettextize}
-%{__libtoolize}
+#%{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%{__automake} m4/Makefile
+#%{__automake} m4/Makefile
 %configure \
 	%{?with_home_etc:--with-home-etc}
 
