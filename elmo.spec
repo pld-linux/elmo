@@ -2,12 +2,12 @@
 %bcond_without	home_etc	# don't use home_etc
 #
 Summary:	Elmo, MUA supporting Maildirs and Polish language
-Summary(pl):	Elmo - program pocztowy obs³uguj±cy Maildiry i jêzyk polski
+Summary(pl.UTF-8):   Elmo - program pocztowy obsÅ‚ugujÄ…cy Maildiry i jÄ™zyk polski
 Name:		elmo
 Version:	1.3.2
 Release:	3
 License:	GPL v2+
-Vendor:		Jacek ¦liwerski <rzyj@plusnet.pl>
+Vendor:		Jacek Åšliwerski <rzyj@plusnet.pl>
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	bc3836a276b092fde8555e42532d4bc8
@@ -27,8 +27,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Elmo, excellent and light mua.
 
-%description -l pl
-Elmo - ¶wietny i niedu¿y program pocztowy.
+%description -l pl.UTF-8
+Elmo - Å›wietny i nieduÅ¼y program pocztowy.
 
 %prep
 %setup -q
