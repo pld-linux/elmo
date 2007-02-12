@@ -2,7 +2,7 @@
 %bcond_without	home_etc	# don't use home_etc
 #
 Summary:	Elmo, MUA supporting Maildirs and Polish language
-Summary(pl.UTF-8):   Elmo - program pocztowy obsługujący Maildiry i język polski
+Summary(pl.UTF-8):	Elmo - program pocztowy obsługujący Maildiry i język polski
 Name:		elmo
 Version:	1.3.2
 Release:	3
