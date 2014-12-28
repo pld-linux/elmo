@@ -16,7 +16,7 @@ Patch0:		%{name}-etc_dir.patch
 URL:		http://elmo.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gpgme-devel
 BuildRequires:	libstdc++-devel
 #BuildRequires:	libtool
